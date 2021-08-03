@@ -7,6 +7,13 @@ spring:
     url: jdbc:log4jdbc:mariadb://127.0.0.1:3306/wikenDevelopment?useUnicode=true&characterEncoding=utf8&autoReconnect=true&serverTimezone=Asia/Seoul&useOldAliasMetadataBehavior=true&zeroDateTimeNehavior=convertToNull
     username: sbsst
     password: sbs123414
+#  messages:
+#    encoding: UTF-8
+#  http:
+#    encoding: UTF-8
+#  thymeleaf:
+#    mode: HTML5
+#    encoding: UTF-8
 mybatis:
   type-aliases-package: com.kdh.wiken.vo
 custom:
