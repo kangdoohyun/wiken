@@ -1,18 +1,15 @@
-<!doctype html>
-<html lang="ko" xmlns:th="http://www.w3.org/1999/xhtml">
-<head th:replace="/usr/common/common :: head">
-    <title id="pageTitle"><fragment th:remove="tag" th:text="#{common.logoText}"></fragment> | 메인</title>
+<!DOCTYPE html>
+<html lang="ko"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{usr/layout/default}">
+
+<head>
+    <title>메인</title>
 </head>
-<body>
 
-<div class="site-wrap">
-    <header th:replace="/usr/common/common :: header"></header>
+<section layout:fragment="content" class="section">
+    <div th:text="${name}"></div>
+</section>
 
-    <main>
-        <div th:text="${name}"></div>
-    </main>
-
-    <footer th:replace="/usr/common/common :: footer"></footer>
-</div>
-</body>
 </html>

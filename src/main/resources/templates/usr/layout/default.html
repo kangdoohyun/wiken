@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:replace="usr/fragments/head :: head">
+    <title layout:title-pattern="$LAYOUT_TITLE : $CONTENT_TITLE">위켄</title>
+    <script src="common-script.js"></script>
+</head>
+<body>
+<div class="site-wrap">
+    <header th:replace="usr/fragments/header :: header">
+        <p>Page header goes here</p>
+    </header>
+    <section layout:fragment="content">
+        <p>Page content goes here</p>
+    </section>
+    <footer th:replace="usr/fragments/footer :: footer">
+        <p>Page footer goes here</p>
+    </footer>
+</div>
+</body>
+</html>
