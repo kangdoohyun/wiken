@@ -8,7 +8,7 @@
     <title>리스트</title>
 </head>
 
-<main th:fragment="content">
+<main layout:fragment="main">
     <div th:each="article : ${articles}" th:object="${article}">
         <div th:text="*{id}"></div>
         <div th:text="*{regDate}"></div>
