@@ -8,7 +8,7 @@
     <title>리스트</title>
 </head>
 
-<section layout:fragment="content" class="section">
+<main th:fragment="content">
     <div th:each="article : ${articles}" th:object="${article}">
         <div th:text="*{id}"></div>
         <div th:text="*{regDate}"></div>
@@ -16,6 +16,6 @@
         <div th:text="*{title}"></div>
         <hr>
     </div>
-</section>
+</main>
 
 </html>

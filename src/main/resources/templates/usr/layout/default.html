@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <head th:replace="usr/fragments/head :: head">
-    <title layout:title-pattern="$LAYOUT_TITLE : $CONTENT_TITLE">위켄</title>
+    <title layout:title-pattern="$LAYOUT_TITLE | $CONTENT_TITLE">[[#{common.logoText}]]</title>
     <script src="common-script.js"></script>
 </head>
 <body>
-<div class="site-wrap">
-    <header th:replace="usr/fragments/header :: header">
+<div class="site-wrap flex flex-col min-h-screen">
+    <header th:replace="usr/fragments/header :: header" >
         <p>Page header goes here</p>
     </header>
-    <section layout:fragment="content">
+    <main layout:fragment="main" class="flex-grow">
         <p>Page content goes here</p>
-    </section>
+    </main>
     <footer th:replace="usr/fragments/footer :: footer">
         <p>Page footer goes here</p>
     </footer>
