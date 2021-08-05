@@ -9,7 +9,12 @@
 </head>
 
 <main layout:fragment="main">
-    <div th:text="${name}"></div>
+    <th:block th:if="${rq.logined}">
+        로그인 됨
+    </th:block>
+    <th:block th:unless="${rq.logined}">
+        로그인 안됨
+    </th:block>
 </main>
 
 </html>

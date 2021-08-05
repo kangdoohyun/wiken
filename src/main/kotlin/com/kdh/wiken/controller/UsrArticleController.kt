@@ -12,8 +12,8 @@ class UsrArticleController (private val articleService : ArticleService) {
     @RequestMapping("usr/article/list")
     fun showList(model : Model): String {
         val articles =  articleService.getArticles()
+
         model.set("articles", articles)
-        println("안녕하세요")
 
         return "usr/article/list"
     }
