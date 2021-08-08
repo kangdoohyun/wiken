@@ -1,7 +1,6 @@
 package com.kdh.wiken.controller
 
 import com.kdh.wiken.service.ArticleService
-import com.kdh.wiken.vo.Article
 import org.springframework.stereotype.Controller
 import org.springframework.ui.Model
 import org.springframework.ui.set
