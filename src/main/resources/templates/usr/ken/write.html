@@ -43,15 +43,20 @@
           form.submit();
         }
     </script>
-    <form action="../ken/doWrite" method="POST" onsubmit="KenWrite__submit(this); return false;">
+    <style>
+        html .toastui-editor-contents,
+        html .ProseMirror {
+          font-size:19px;
+        }
+    </style>
+    <form action="../ken/doWrite" method="POST" onsubmit="KenWrite__submit(this); return false;" class="h-full flex flex-col">
         <input type="hidden" name="source">
         <input type="hidden" name="result">
         <div>
             <input type="text" name="title" placeholder="제목">
         </div>
-        <div>
-            <div class="toast-ui-editor toast-ui-editor--body">
-            </div>
+        <div class="flex-grow">
+            <div class="toast-ui-editor toast-ui-editor--body h-full" data-toast-editor-height="100%;" data-toast-editor-placeholder="note .."></div>
         </div>
         <div>
             <button type="submit">저장</button>
