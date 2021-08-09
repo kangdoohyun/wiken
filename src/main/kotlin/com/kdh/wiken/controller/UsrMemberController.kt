@@ -13,7 +13,7 @@ import javax.servlet.http.HttpSession
 
 @Controller
 class UsrMemberController (private val articleService : ArticleService) {
-    @RequestMapping("/usr/member/doLogin")
+    @RequestMapping("member/doLogin")
     @ResponseBody
     fun doLogin(loginId: String, loginPw: String, session: HttpSession): String {
         val member = Member(1, "2021-12-12 12:12:12", "2021-12-12 12:12:12", "user1", "user1")
@@ -23,7 +23,7 @@ class UsrMemberController (private val articleService : ArticleService) {
         return "로그인 성공"
     }
 
-    @RequestMapping("/usr/member/doLogout")
+    @RequestMapping("member/doLogout")
     @ResponseBody
     fun doLogout(session: HttpSession): String {
         session.removeAttribute("loginedMemberJsonStr")

@@ -13,7 +13,7 @@ class UsrArticleController (private val articleService : ArticleService) {
     @Autowired
     private lateinit var rq: Rq
 
-    @RequestMapping("usr/article/list")
+    @RequestMapping("article/list")
     fun showList(model : Model): String {
         val articles =  articleService.getArticles()
 

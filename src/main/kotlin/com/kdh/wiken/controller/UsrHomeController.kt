@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.ResponseBody
 
 @Controller
 class UsrHomeController {
-    @RequestMapping("usr/home/main")
+    @RequestMapping("home/main")
     fun showMain(model : Model): String {
         model.addAttribute("name" , "홍길동" )
         model.addAttribute("rq", Rq())
