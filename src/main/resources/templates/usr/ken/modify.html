@@ -10,9 +10,9 @@
 
 <main layout:fragment="main">
     <script>
-        let KenWrite__submitDone = false;
-        function KenWrite__submit(form) {
-          if ( KenWrite__submitDone ) {
+        let KenModify__submitDone = false;
+        function KenModify__submit(form) {
+          if ( KenModify__submitDone ) {
             return;
           }
 
@@ -35,7 +35,7 @@
             return;
           }
 
-          KenWrite__submitDone = true;
+          KenModify__submitDone = true;
 
           form.source.value = source;
           form.result.value = result;
@@ -43,18 +43,18 @@
           form.submit();
         }
     </script>
-    <form action="../ken/doWrite" method="POST" onsubmit="KenWrite__submit(this); return false;">
+    <form action="../../ken/doModify" method="POST" onsubmit="KenModify__submit(this); return false;">
+        <input type="hidden" name="id" th:value="${ken.id}">
         <input type="hidden" name="source">
         <input type="hidden" name="result">
         <div>
-            <input type="text" name="title" placeholder="제목">
+            <input type="text" name="title" placeholder="제목" th:value="${ken.title}">
         </div>
         <div>
-            <div class="toast-ui-editor toast-ui-editor--body">
-            </div>
+            <div class="toast-ui-editor toast-ui-editor--body">[(${ken.source})]</div>
         </div>
         <div>
-            <button type="submit">저장</button>
+            <button type="submit">수정</button>
         </div>
     </form>
 </main>
