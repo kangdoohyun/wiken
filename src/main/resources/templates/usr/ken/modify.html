@@ -51,7 +51,11 @@
             <input type="text" name="title" placeholder="제목" th:value="${ken.title}">
         </div>
         <div>
-            <div class="toast-ui-editor toast-ui-editor--body">[(${ken.source})]</div>
+            <div class="toast-ui-editor toast-ui-editor--body">
+                <script type="text/x-template">
+[(${ken.source})]
+                </script>
+            </div>
         </div>
         <div>
             <button type="submit">수정</button>

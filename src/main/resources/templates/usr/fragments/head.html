@@ -83,6 +83,16 @@
           return params;
         }
 
+        function configPlugin() {
+          const toHTMLRenderers = {
+            config(node) {
+              return [];
+            }
+          }
+
+          return { toHTMLRenderers }
+        }
+
         function codepenPlugin() {
           const toHTMLRenderers = {
             codepen(node) {
@@ -248,7 +258,8 @@
                 toastui.Editor.plugin.uml,
                 katexPlugin,
                 youtubePlugin,
-                codepenPlugin
+                codepenPlugin,
+                configPlugin
               ],
               customHTMLSanitizer: html => {
                 return DOMPurify.sanitize(html, { ADD_TAGS: ["iframe"], ADD_ATTR: ['width', 'height', 'allow', 'allowfullscreen', 'frameborder', 'scrolling', 'style', 'title', 'loading', 'allowtransparency'] }) || ''
@@ -278,7 +289,8 @@
                 toastui.Editor.plugin.uml,
                 katexPlugin,
                 youtubePlugin,
-                codepenPlugin
+                codepenPlugin,
+                configPlugin
               ],
               customHTMLSanitizer: html => {
                 return DOMPurify.sanitize(html, { ADD_TAGS: ["iframe"], ADD_ATTR: ['width', 'height', 'allow', 'allowfullscreen', 'frameborder', 'scrolling', 'style', 'title', 'loading', 'allowtransparency'] }) || ''
