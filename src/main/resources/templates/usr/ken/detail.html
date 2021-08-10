@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ko"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{usr/layout/default}">
+
+<head>
+    <title>Ken [[${ken.id}]]</title>
+</head>
+
+<main layout:fragment="main">
+    <div class="container h-full mx-auto px-3">
+        <div class="toast-ui-viewer h-full" data-toast-editor-height="100%;">
+            <script type="text/x-template">
+                [(${ken.source})]
+            </script>
+        </div>
+    </div>
+</main>
+
+</html>
