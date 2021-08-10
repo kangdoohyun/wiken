@@ -2,6 +2,7 @@ package com.kdh.wiken.controller
 
 import com.kdh.wiken.service.KenService
 import com.kdh.wiken.vo.KenSourceInterpreter
+import com.kdh.wiken.vo.ResultData
 import com.kdh.wiken.vo.Rq
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Controller
@@ -24,11 +25,18 @@ class UsrKenController (private val kenService: KenService) {
     @ResponseBody
     fun doWrite(id: Int, source: String, result: String): String {
         val kenSourceInterpreter = KenSourceInterpreter.from(source)
+
         val title = kenSourceInterpreter.getTitle()
 
-        val resultData = kenService.write(1, title, source, result)
+        if(id == 0){
+            val resultData = kenService.write(1, title, source, result)
 
-        val id = resultData.getData()
+            val id = resultData.getData()
+
+            return rq.replaceJs("", "../ken/${id}/edit")
+        }
+
+        kenService.modify(id, title, source, result)
 
         return rq.replaceJs("", "../ken/${id}/edit")
     }
@@ -38,14 +46,6 @@ class UsrKenController (private val kenService: KenService) {
         val ken = kenService.getKen(id);
         model.addAttribute("ken", ken)
 
-        return "usr/ken/modify"
-    }
-
-    @RequestMapping("ken/doModify")
-    @ResponseBody
-    fun doModify(id: Int, title: String, source: String, result: String): String {
-        val resultData = kenService.modify(id, title, source, result)
-
-        return rq.replaceJs("", "../ken/${id}/edit")
+        return "usr/ken/write"
     }
 }
